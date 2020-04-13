@@ -5,10 +5,10 @@ using namespace family;
 
 Tree :: Tree(string nroot){
 }
-Tree Tree :: addFather(string to,string add){
+Tree& Tree :: addFather(string to,string add){
 	return *this;
 }
-Tree Tree :: addMother(string to,string add){
+Tree& Tree :: addMother(string to,string add){
 	return *this;
 }
 string Tree :: display(){
