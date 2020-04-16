@@ -9,7 +9,6 @@ TEST_CASE("currect code"){
 	CHECK(T1.relation("Ftest").compare("unrelated")==0);
 	T1.addFather("idk","Ftest");
 	CHECK(T1.relation("Ftest").compare("father")==0);
-	CHECK_THROWS(family::Tree T2 (5));
 	T1.remove("test");
 	CHECK(T1.relation("test").compare("unrelated")==0);
 	CHECK(T1.relation("Ftest").compare("unrelated")==0);
@@ -34,8 +33,8 @@ TEST_CASE("tree"){
 	CHECK(T.find("me").compare("test")==0);
 	CHECK(T.find("father").compare("Ftest")==0);
 	CHECK(T.find("mother").compare("Mtest")==0);
-	CHECK(T.find("grandfather").compare("FFtest")==0||T.find("grandfather").compare("FMtest")==0);
-	CHECK(T.find("grandmother").compare("MMtest")==0||T.find("grandmother").compare("MFtest")==0);
+	CHECK(((T.find("grandfather").compare("FFtest")==0)||(T.find("grandfather").compare("FMtest")==0)));
+	CHECK(((T.find("grandmother").compare("MMtest")==0)||(T.find("grandmother").compare("MFtest")==0)));
 	T.remove("test");
 	CHECK(T.relation("test").compare("unrelated")==0);
 	CHECK(T.relation("Ftest").compare("unrelated")==0);
